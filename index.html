@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>isiklisusleme.com — Site Haritası & Kaynak Merkezi</title>
+    <meta name="description" content="isiklisusleme.com site haritası — 250+ sayfa, 12 bölüm, 8 hesaplayıcı, 81 il rehberi. Türkiye yılbaşı LED ışık süsleme sektör rehberi.">
+    <link rel="canonical" href="https://www.isiklisusleme.com">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        :root {
+            --gold: #FFD700;
+            --gold-dark: #D4AF37;
+            --bg: #0a0a0f;
+            --surface: #12121a;
+            --surface-hover: #1a1a28;
+            --border: #2a2a3a;
+            --text: #e0e0e8;
+            --text-muted: #8888a0;
+            --accent: #FFD700;
+            --red: #e74c3c;
+            --green: #2ecc71;
+            --blue: #3498db;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 32px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+        .stats {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .stat {
+            text-align: center;
+            padding: 12px 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+        .stat-number {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--gold);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .stat-label { font-size: 0.75rem; color: var(--text-muted); }
+        .social-links {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .social-links a {
+            padding: 8px 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+        .social-links a:hover {
+            background: var(--surface-hover);
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+            z-index: 100;
+            overflow-x: auto;
+        }
+        nav .container {
+            display: flex;
+            gap: 8px;
+            flex-wrap: nowrap;
+        }
+        nav a {
+            padding: 6px 14px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+        nav a:hover, nav a.active {
+            background: var(--gold);
+            color: var(--bg);
+            border-color: var(--gold);
+        }
+        main { padding: 40px 0 80px; }
+        .section { margin-bottom: 48px; }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        .section-header h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        .section-count {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text-muted);
+        }
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 8px;
+        }
+        .link-item {
+            display: block;
+            padding: 10px 14px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.15s;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .link-item:hover {
+            background: var(--surface-hover);
+            border-color: var(--gold-dark);
+            color: var(--gold);
+            transform: translateX(4px);
+        }
+        .link-item .path {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            display: block;
+            margin-top: 2px;
+        }
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+        footer a { color: var(--gold); text-decoration: none; }
+        @media (max-width: 640px) {
+            header h1 { font-size: 1.5rem; }
+            .stats { gap: 8px; }
+            .stat { padding: 8px 12px; }
+            .links-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>isiklisusleme.com</h1>
+        <p>Turkiye'nin kanit-odakli, veri-yogun yilbasi LED isik susleme sektor rehberi. 250+ sayfa, 12 bolum, 8 hesaplayici, 81 il rehberi.</p>
+        <div class="stats">
+            <div class="stat"><div class="stat-number">250+</div><div class="stat-label">Sayfa</div></div>
+            <div class="stat"><div class="stat-number">12</div><div class="stat-label">Bolum</div></div>
+            <div class="stat"><div class="stat-number">8</div><div class="stat-label">Hesaplayici</div></div>
+            <div class="stat"><div class="stat-number">40+</div><div class="stat-label">Sehir</div></div>
+            <div class="stat"><div class="stat-number">50+</div><div class="stat-label">Mekan</div></div>
+            <div class="stat"><div class="stat-number">30+</div><div class="stat-label">Vaka</div></div>
+        </div>
+        <div class="social-links">
+            <a href="https://www.isiklisusleme.com" target="_blank" rel="me">Web Sitesi</a>
+            <a href="https://www.linkedin.com/company/isiklisusleme" target="_blank" rel="me">LinkedIn</a>
+            <a href="https://www.facebook.com/isiklisusleme/" target="_blank" rel="me">Facebook</a>
+            <a href="https://www.youtube.com/@isiklisusleme" target="_blank" rel="me">YouTube</a>
+            <a href="https://www.crunchbase.com/organization/isiklisusleme-com" target="_blank" rel="me">Crunchbase</a>
+            <a href="https://medium.com/@ismailgunaydin/why-turkeys-christmas-lighting-industry-needed-a-data-driven-guide-and-how-we-built-635340ea5477" target="_blank" rel="me">Medium</a>
+            <a href="https://dev.to/ismailgunaydin/how-we-built-a-programmatic-seo-platform-with-500-pages-for-turkeys-led-lighting-industry-5f9a" target="_blank" rel="me">Dev.to</a>
+            <a href="https://modernwebseo.hashnode.dev/isiklisusleme-7-free-client-side-calculators-led-lighting-turkey" target="_blank" rel="me">Hashnode</a>
+        </div>
+    </div>
+</header>
+<nav>
+    <div class="container">
+        <a href="#rehber">Rehberler</a>
+        <a href="#mekan">Mekanlar</a>
+        <a href="#urun">Urunler</a>
+        <a href="#fiyat">Fiyatlar</a>
+        <a href="#hesaplayici">Hesaplayicilar</a>
+        <a href="#sehir">Sehirler</a>
+        <a href="#karsilastirma">Karsilastirmalar</a>
+        <a href="#vaka">Vaka Calismalari</a>
+        <a href="#uygulama">Uygulama/Saha</a>
+        <a href="#tasarim">Tasarim</a>
+        <a href="#sezon">Sezon</a>
+        <a href="#soru">Soru-Cevap</a>
+        <a href="#diger">Diger</a>
+    </div>
+</nav>
+<main>
+<div class="container">
+<div class="section" id="rehber">
+    <div class="section-header">
+        <h2>Rehberler</h2>
+        <span class="section-count">40+ sayfa</span>
+    </div>
+    <div class="links-grid">
+        <a class="link-item" href="https://www.isiklisusleme.com/rehber"><strong>Tum Rehberler</strong><span class="path">/rehber</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/rehber/isikli-susleme-nedir">Isikli susleme nedir?<span class="path">/rehber/isikli-susleme-nedir</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/rehber/led-ip-koruma-siniflari-ip44-ip65-ip67-ip68">LED IP koruma siniflari (IP44-IP68)<span class="path">/rehber/led-ip-koruma-siniflari</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/rehber/ce-belgesi-led-isik-zorunlu">CE belgesi zorunlulugu<span class="path">/rehber/ce-belgesi-led-isik-zorunlu</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/rehber/renk-sicakligi-2700k-4000k-6500k">Renk sicakligi (2700K/4000K/6500K)<span class="path">/rehber/renk-sicakligi</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/rehber/profesyonel-vs-amator-kurulum-7-fark">Profesyonel vs amator — 7 fark<span class="path">/rehber/profesyonel-vs-amator</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/rehber/led-chip-turleri-smd2835-smd5050-cob">LED chip turleri (SMD2835/5050/COB)<span class="path">/rehber/led-chip-turleri</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/rehber/led-voltaj-12v-24v-220v">LED voltaj (12V/24V/220V)<span class="path">/rehber/led-voltaj</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/rehber/led-watt-tuketim-hesabi">LED watt tuketim hesabi<span class="path">/rehber/led-watt-tuketim</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/rehber/led-omru-30000-50000-saat-gercek">LED omru — 30.000-50.000 saat gercek mi?<span class="path">/rehber/led-omru</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/rehber/lumen-watt-parlaklik">Lumen/watt parlaklik<span class="path">/rehber/lumen-watt</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/rehber/led-trafo-secimi-smps-lineer">LED trafo secimi (SMPS/lineer)<span class="path">/rehber/led-trafo-secimi</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/rehber/led-termal-yonetim-isi-dagilim">LED termal yonetim<span class="path">/rehber/led-termal-yonetim</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/rehber/rgb-rgbw-rgbic-pixel-led-farki">RGB/RGBW/RGBIC/Pixel LED farki<span class="path">/rehber/rgb-rgbw-rgbic</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/rehber/led-tarihi-gelisim-1879-2026">LED tarihi gelisim 1879-2026<span class="path">/rehber/led-tarihi</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/rehber/yapay-zeka-led-tasarim-2026-trend">Yapay zeka LED tasarim 2026<span class="path">/rehber/yapay-zeka-led</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/rehber/belediye-cephe-led-izin-yonetmelik-mevzuat">Belediye cephe LED izin mevzuat<span class="path">/rehber/belediye-cephe-led</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/rehber/yangin-yonetmeligi-cephe-led-mevzuat">Yangin yonetmeligi cephe LED<span class="path">/rehber/yangin-yonetmeligi</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/rehber/led-2026-trend-renk-format-tasarim">LED 2026 trend renk format<span class="path">/rehber/led-2026-trend</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/rehber/isikli-susleme-psikolojik-etkisi">Isikli susleme psikolojik etkisi<span class="path">/rehber/psikolojik-etki</span></a>
+    </div>
+</div>
+<div class="section" id="hesaplayici">
+    <div class="section-header">
+        <h2>Hesaplayicilar (Ucretsiz)</h2>
+        <span class="section-count">8 arac</span>
+    </div>
+    <div class="links-grid">
+        <a class="link-item" href="https://www.isiklisusleme.com/hesaplayici"><strong>Tum Hesaplayicilar</strong><span class="path">/hesaplayici</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/hesaplayici/cephe-metraj-led-metresi">Cephe metraj hesaplayici<span class="path">/hesaplayici/cephe-metraj</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/hesaplayici/isletme-dis-cephe-yilbasi-susleme-maliyet">Isletme maliyet hesaplayici<span class="path">/hesaplayici/isletme-maliyet</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/hesaplayici/ip-koruma-sinifi-secici">IP koruma sinifi secici<span class="path">/hesaplayici/ip-koruma</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/hesaplayici/trafo-wattlik-hesabi">Trafo watt hesaplayici<span class="path">/hesaplayici/trafo-watt</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/hesaplayici/yillik-elektrik-tuketimi-simulator">Yillik elektrik tuketimi simulatoru<span class="path">/hesaplayici/elektrik-tuketimi</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/hesaplayici/renk-sicakligi-simulator">Renk sicakligi simulatoru<span class="path">/hesaplayici/renk-sicakligi</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/hesaplayici/sartname-madde-olusturucu">Sartname madde olusturucu<span class="path">/hesaplayici/sartname</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/hesaplayici/sokum-kurulum-takvim-18-adim">Sokum kurulum takvim (18 adim)<span class="path">/hesaplayici/sokum-takvim</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/hesaplayici/magaza-roi-musteri-trafigi-artisi">Magaza ROI musteri trafigi<span class="path">/hesaplayici/magaza-roi</span></a>
+    </div>
+</div>
+<div class="section" id="sehir">
+    <div class="section-header">
+        <h2>Sehir Rehberleri</h2>
+        <span class="section-count">40+ sehir</span>
+    </div>
+    <div class="links-grid">
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir"><strong>Tum Sehirler</strong><span class="path">/sehir</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir/istanbul-yilbasi-isik-susleme-rehberi">Istanbul (ana rehber)<span class="path">/sehir/istanbul</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir/istanbul-bogaz-yali-premium-yilbasi-aydinlatma">Istanbul Bogaz yali premium<span class="path">/sehir/istanbul-bogaz</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir/istanbul-anadolu-yakasi-villa-yilbasi-isiklandirma">Istanbul Anadolu yakasi villa<span class="path">/sehir/istanbul-anadolu</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir/istanbul-avrupa-yakasi-profesyonel-yilbasi-aydinlatma">Istanbul Avrupa yakasi<span class="path">/sehir/istanbul-avrupa</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir/istanbul-tarihi-yarimada-vakif-izin">Istanbul tarihi yarimada<span class="path">/sehir/istanbul-tarihi</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir/ankara-yilbasi-isik-susleme">Ankara<span class="path">/sehir/ankara</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir/izmir-yilbasi-isik-susleme">Izmir<span class="path">/sehir/izmir</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir/antalya-yilbasi-isik-susleme">Antalya<span class="path">/sehir/antalya</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir/bursa-yilbasi-isik-susleme">Bursa<span class="path">/sehir/bursa</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir/adana-yilbasi-isik-susleme">Adana<span class="path">/sehir/adana</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir/gaziantep-yilbasi-isik-susleme">Gaziantep<span class="path">/sehir/gaziantep</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir/konya-yilbasi-isik-susleme">Konya<span class="path">/sehir/konya</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir/kayseri-yilbasi-isik-susleme">Kayseri<span class="path">/sehir/kayseri</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir/mersin-yilbasi-isik-susleme">Mersin<span class="path">/sehir/mersin</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir/samsun-yilbasi-isik-susleme">Samsun<span class="path">/sehir/samsun</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir/trabzon-yilbasi-isik-susleme">Trabzon<span class="path">/sehir/trabzon</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir/eskisehir-yilbasi-isik-susleme">Eskisehir<span class="path">/sehir/eskisehir</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir/diyarbakir-yilbasi-isik-susleme">Diyarbakir<span class="path">/sehir/diyarbakir</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir/erzurum-palandoken-kis-turizm-yilbasi">Erzurum Palandoken<span class="path">/sehir/erzurum</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sehir/mardin-tarihi-tasdan-yilbasi-aydinlatma">Mardin tarihi tas<span class="path">/sehir/mardin</span></a>
+    </div>
+</div>
+<div class="section" id="diger">
+    <div class="section-header">
+        <h2>Tum Bolumler — Hizli Erisim</h2>
+    </div>
+    <div class="links-grid">
+        <a class="link-item" href="https://www.isiklisusleme.com/mekan"><strong>Mekan Rehberleri (50+)</strong><span class="path">/mekan</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/urun"><strong>Urun Rehberleri (40+)</strong><span class="path">/urun</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/fiyat"><strong>Fiyat Sayfalari (35+)</strong><span class="path">/fiyat</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/karsilastirma"><strong>Karsilastirmalar (35+)</strong><span class="path">/karsilastirma</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/vaka"><strong>Vaka Calismalari (30+)</strong><span class="path">/vaka</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/uygulama"><strong>Uygulama/Saha (35+)</strong><span class="path">/uygulama</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/tasarim"><strong>Tasarim Rehberleri (40+)</strong><span class="path">/tasarim</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sezon"><strong>Sezon Takvimi (35+)</strong><span class="path">/sezon</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/soru"><strong>Soru-Cevap (45+)</strong><span class="path">/soru</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sozluk"><strong>Sozluk</strong><span class="path">/sozluk</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/mevzuat-kaynakca"><strong>Mevzuat & Kaynakca</strong><span class="path">/mevzuat-kaynakca</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/editoryel-yontem"><strong>Editoryal Yontem</strong><span class="path">/editoryel-yontem</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/hakkimizda"><strong>Hakkimizda</strong><span class="path">/hakkimizda</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/yazar-ekip"><strong>Yazar Ekip</strong><span class="path">/yazar-ekip</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/iletisim"><strong>Iletisim</strong><span class="path">/iletisim</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/sikca-sorulan-sorular"><strong>SSS</strong><span class="path">/sikca-sorulan-sorular</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/kariyer"><strong>Kariyer</strong><span class="path">/kariyer</span></a>
+        <a class="link-item" href="https://www.isiklisusleme.com/faydali-baglantilar"><strong>Faydali Baglantilar</strong><span class="path">/faydali-baglantilar</span></a>
+    </div>
+</div>
+</div>
+</main>
+<footer>
+    <div class="container">
+        <p>&copy; 2026 isiklisusleme.com — Turkiye'nin kanit-odakli yilbasi isik susleme sektor rehberi.</p>
+        <p style="margin-top:8px;">Crafted by <a href="https://www.ismailgunaydin.com" target="_blank">Ismail Gunaydin</a> | <a href="https://www.a1organizasyon.com" target="_blank">A1 Organizasyon</a> | <a href="https://www.modernwebseo.com" target="_blank">ModernWebSEO</a></p>
+    </div>
+</footer>
+</body>
+</html>
